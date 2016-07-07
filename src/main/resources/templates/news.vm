@@ -1,0 +1,27 @@
+<html>
+    <body>
+    Hello velocity!
+    $!{value1}<br>
+    #foreach ($l in $list)
+        list: $!{foreach.index}/$!{foreach.count}:$!{l}<br>
+    #end
+    #foreach($key in $map.keySet())
+    map: $!{foreach.index}/$!{foreach.count}:$!{key} $!{map.get($key)}<br>
+    #end
+   User: $!{user.name}
+   User: $!{user.age}
+    #set($title = "this is a titile~")
+    Titil: $title
+    Include:#include("Header.vm")
+    Parse:#parse("Header.vm")<br>
+
+    #macro(reder $list1, $index1)
+        list by macro $list1 , $index1
+    #end
+    #foreach($l in $list)
+        #reder($l,$foreach.index)<br>
+    #end
+
+
+    </body>
+</html>
