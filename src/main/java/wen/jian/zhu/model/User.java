@@ -1,17 +1,23 @@
 package wen.jian.zhu.model;
 
 /**
- * Created by Administrator on 2016/7/7.
+ * Created by nowcoder on 2016/6/26.
  */
 public class User {
-    public String name;
-    public int age;
-    public int getAge() {
-        return age;
-    }
+    private int id;
+    private String name;
+    private String password;
+    private String salt;
+    private String headUrl;
 
-    public void setAge(int age) {
-        this.age = age;
+    public User() {
+
+    }
+    public User(String name) {
+        this.name = name;
+        this.password = "";
+        this.salt = "";
+        this.headUrl = "";
     }
 
     public String getName() {
@@ -22,8 +28,35 @@ public class User {
         this.name = name;
     }
 
-    public User(String name, int age) {
-        this.name = name;
-        this.age = age;
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public String getHeadUrl() {
+        return headUrl;
+    }
+
+    public void setHeadUrl(String headUrl) {
+        this.headUrl = headUrl;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
